@@ -1,0 +1,6 @@
+<title>{{model.title}}</title>
+<link rel="canonical" href="{{model.canonicalURL}}">
+
+{{#each model.ampExtensions as |ampExt|}}
+  {{amp-extension ampExt}}
+{{/each}}

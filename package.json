@@ -42,7 +42,8 @@
   ],
   "dependencies": {
     "amphtml-validator": "^1.0.10",
-    "ember-cli-babel": "^5.1.6"
+    "ember-cli-babel": "^5.1.6",
+    "ember-cli-head": "0.1.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
