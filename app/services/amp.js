@@ -36,5 +36,5 @@ export default Service.extend({
   isAmp:         computed.alias('headData.isAmp'),
   ampExtensions: computed.alias('headData.ampExtensions'),
   title:         computed.alias('headData.title'),
-  canonicalURL:  computed.alias('headData.canonicalURL'),
+  canonicalUrl:  computed.alias('headData.canonicalUrl'),
 });

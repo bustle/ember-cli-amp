@@ -5,12 +5,28 @@ var fs = require('fs');
 var path = require('path');
 var CSSInjector = require('./lib/css_injector');
 var CSSValidator = require('./lib/css_validator');
+var VersionChecker = require('ember-cli-version-checker');
 
 var TEMPLATE_PATH = path.join(__dirname, './ext/amp-index-template.html');
 var PLACEHOLDER = '<!-- EMBER_CLI_AMP_CSS_PLACEHOLDER -->';
 
+var MINIMUM_FASTBOOT_VERSION = '1.0.0-beta.8';
+
 module.exports = {
   name: 'ember-cli-amp',
+  after: 'ember-cli-fastboot',
+
+  init() {
+    this._super.apply(this, arguments);
+
+    var checker = new VersionChecker(this);
+    var dep = checker.for('ember-cli-fastboot', 'npm');
+    if (dep.satisfies('> ' + MINIMUM_FASTBOOT_VERSION)) {
+      this.ui.write('ember-cli-fastboot version: ok (' + dep.version + ')');
+    } else {
+      this.ui.write('ember-cli-fastboot version: not ok (' + dep.version + ')');
+    }
+  },
 
   /**
    * addon hook

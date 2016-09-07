@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-amp",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "Enable AMP rendering for an Ember Application",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -43,7 +43,8 @@
   "dependencies": {
     "amphtml-validator": "^1.0.10",
     "ember-cli-babel": "^5.1.6",
-    "ember-cli-head": "0.1.0"
+    "ember-cli-head": "0.1.0",
+    "ember-cli-version-checker": "^1.1.6"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

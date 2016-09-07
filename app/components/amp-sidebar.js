@@ -22,6 +22,9 @@ export default Component.extend({
     this._super(...arguments);
     if (!this._didInsert) {
       this._didInsert = true;
+
+      // Have to schedule into `afterRender` here rather
+      // because the `didInsertElement` is not called in Fastboot
       run.schedule('afterRender', () => {
         if (this.isDestroyed) { return; }
 

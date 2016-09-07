@@ -17,13 +17,13 @@ appropriate script tags to be added to the document when rendering.
 this.get('amp').registerExtension('twitter'); // registers the `amp-twitter` extension
 ```
 
-AMP also requires some other data to be included in a valid AMP HTML page including `title` and `canonicalURL`.
+AMP also requires some other data to be included in a valid AMP HTML page including `title` and `canonicalUrl`.
 Both of these should be set on the `amp` service, typically in the `model` or `afterModel` hook in your route:
 ```javascript
 // route.js
 // ...
 afterModel(post) {
-  this.get('amp').set('canonicalURL', post.get('url'));
+  this.get('amp').set('canonicalUrl', post.get('url'));
   this.get('amp').set('title', post.get('title'));
 }
 ```
@@ -124,6 +124,6 @@ Use the `registerExtension` method of the `amp` service, e.g.:
 this.get('amp').registerExtension('iframe');
 ```
 
-  * How do I specify other required AMP metadata, e.g. `canonicalURL` or `title`?
+  * How do I specify other required AMP metadata, e.g. `canonicalUrl` or `title`?
 
 Set the property on the `amp` service in your route's `model` or `afterModel` hook.
