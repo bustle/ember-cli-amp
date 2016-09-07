@@ -11,6 +11,7 @@ var TEMPLATE_PATH = path.join(__dirname, './ext/amp-index-template.html');
 var PLACEHOLDER = '<!-- EMBER_CLI_AMP_CSS_PLACEHOLDER -->';
 
 var MINIMUM_FASTBOOT_VERSION = '1.0.0-beta.8';
+var MINIMUM_EMBER_HEAD_VERSION = '0.1.0';
 
 module.exports = {
   name: 'ember-cli-amp',
@@ -19,13 +20,7 @@ module.exports = {
   init() {
     this._super.apply(this, arguments);
 
-    var checker = new VersionChecker(this);
-    var dep = checker.for('ember-cli-fastboot', 'npm');
-    if (dep.satisfies('> ' + MINIMUM_FASTBOOT_VERSION)) {
-      this.ui.write('ember-cli-fastboot version: ok (' + dep.version + ')');
-    } else {
-      this.ui.write('ember-cli-fastboot version: not ok (' + dep.version + ')');
-    }
+    this._checkDeps();
   },
 
   /**
@@ -147,6 +142,21 @@ module.exports = {
       });
     } else {
       ui.writeInfoLine('AMP CSS validated');
+    }
+  },
+
+  _checkDeps() {
+    var checker = new VersionChecker(this);
+
+    var fastboot = checker.for('ember-cli-fastboot', 'npm');
+    var head = checker.for('ember-cli-head', 'npm');
+
+    if (!fastboot.satisfies('> ' + MINIMUM_FASTBOOT_VERSION)) {
+      this.ui.writeWarnLine('[ember-cli-amp]: ember-cli-fastboot should be > ' + MINIMUM_FASTBOOT_VERSION + '. Your version ('+fastboot.version+') may not work properly.');
+    }
+
+    if (!head.satisfies('>= ' + MINIMUM_EMBER_HEAD_VERSION)) {
+      this.ui.writeWarnLine('[ember-cli-amp]: ember-cli-head should be >= ' + MINIMUM_EMBER_HEAD_VERSION + '. Your version: ' + head.version);
     }
   }
 };
