@@ -1,5 +1,7 @@
 # ember-cli-amp
 
+[![Build Status](https://travis-ci.com/bustlelabs/ember-cli-amp.svg?token=8vuz683UhdhpSsELkQ6V&branch=master)](https://travis-ci.com/bustlelabs/ember-cli-amp)
+
 This addon makes it possible to render valid Google's [Accelerated Mobile Pages project](https://www.ampproject.org/) (AMP) pages with your ember app and Fastboot.
 
 ## Usage
