@@ -168,7 +168,7 @@ AMP does not allow externally-linked CSS files *or* JS files, so:
   * The AMP HTML file that ember-cli-amp generates does not have `<script>` tags. Unlike typical fastboot, your ember app won't boot up and "hydrate" the DOM when the page loads.
   * The CSS file you specify in options is injected into the AMP HTML file directly.
 
-Read more about AMP at th [AMP docs page](https://www.ampproject.org/docs/get_started/about-amp.html).
+Read more about AMP at the [AMP docs page](https://www.ampproject.org/docs/get_started/about-amp.html).
 
 ## FAQ
 
@@ -206,7 +206,9 @@ let url = '/photos/1/amp';
 
 let options = {};
 if (routeIsAMP(url)) {
-  options.html = 'path/to/dist/amp-index.html' // e.g.
+  options.html = 'path/to/dist/amp-index.html'
+} else {
+  // Fastboot will inject your app's content into the default "index.html"
 }
 
 app.visit(url, options)
