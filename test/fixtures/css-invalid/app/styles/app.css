@@ -1,0 +1,4 @@
+/* !important is not allowed by AMP:
+ * https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md#important
+ */
+body { color: red !important; }
