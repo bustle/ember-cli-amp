@@ -12,11 +12,11 @@ Then, in order for your pages to render valid AMP you must:
   * edit `outputPaths` in `ember-cli-build.js`
   * add or update a `head.hbs` template to render the amp partial
 
-ember-cli-amp augments the `ember build` process to:
-  * Write a valid AMP HTML file to the build output directory
-  * Inject your CSS into the AMP HTML file (because AMP does not allow externally-linked CSS files)
-
 ### Add `amp` options to `ember-cli-build.js`
+
+ember-cli-amp augments the `ember build` process to write a valid AMP HTML file in your build output directory, with
+your AMP css inlined into it (due to AMP's restriction on externally-linked stylesheets).
+To make this happen you need to specify options to tell it what CSS file to read your AMP CSS from and what filename to use for the built AMP HTML file.
 
 In your `ember-cli-build.js` file add the following options:
 ```javascript
