@@ -16,6 +16,6 @@ test('visiting /sidebar', function(assert) {
     assert.ok(!!sidebar, 'has amp-sidebar');
     assert.ok(sidebar.parentNode === document.body, 'amp-sidebar direct parent is body');
 
-    assert.ok(jQuery('script[src$="amp-sidebar-0.1.js"]').length, 'adds amp-sidebar script');
+    assert.ok(jQuery('script[src="amp-sidebar-0.1.js"]').length, 'adds amp-sidebar script');
   });
 });
