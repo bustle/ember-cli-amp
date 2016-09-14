@@ -3,20 +3,13 @@ import computed from 'ember-computed';
 import injectService from 'ember-service/inject';
 import { A } from 'ember-array/utils';
 
-let defaultExtensions = [
-  'youtube',
-  'twitter',
-  'instagram',
-  'iframe'
-];
-
 export default Service.extend({
   headData: injectService(),
 
   init() {
     this._super(...arguments);
 
-    this.set('ampExtensions', defaultExtensions);
+    this.set('ampExtensions', []);
     this.set('isAmp', false);
   },
 
