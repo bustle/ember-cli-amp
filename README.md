@@ -179,6 +179,8 @@ Use the `registerExtension` method of the `amp` service, e.g.:
 this.get('amp').registerExtension('iframe');
 ```
 
+You can use this code in a component that needs that extension, or make an instance initializer for your app that registers all extensions.
+
   * How do I specify other required AMP metadata, e.g. `canonicalUrl` or `title`?
 
 Set the property on the `amp` service in your route's `model` or `afterModel` hook.
