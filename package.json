@@ -43,6 +43,8 @@
     "rsvp": "^3.2.1"
   },
   "keywords": [
+    "ember",
+    "fastboot",
     "ember-addon",
     "amp"
   ],
