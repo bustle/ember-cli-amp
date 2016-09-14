@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-amp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Enable AMP rendering for an Ember Application",
   "directories": {
     "doc": "doc",
