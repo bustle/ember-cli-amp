@@ -11,11 +11,14 @@
     "start": "ember server",
     "test": "mocha && ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/bustlelabs/ember-cli-amp",
   "engines": {
     "node": ">= 4.0.0"
   },
-  "author": "",
+  "author": "Bustle Labs",
+  "contributors": [
+    "Cory Forsyth <cory.forsyth@gmail.com> (http://coryforsyth.com)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
