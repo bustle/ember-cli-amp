@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'fastboot',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
 
     fastboot: {

@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'fastboot-with-shoebox',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
 
     fastboot: {
