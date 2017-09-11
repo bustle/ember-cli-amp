@@ -18,7 +18,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "mocha && ember try:each"
+    "test": "ember try:each && mocha"
   },
   "dependencies": {
     "amphtml-validator": "1.0.20",
