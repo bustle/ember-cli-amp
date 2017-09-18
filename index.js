@@ -103,7 +103,6 @@ module.exports = {
 
     return this._validateCSS(css)
       .then(() => this._injectCSS(css));
-      .catch((err) => console.error(err));
   },
 
   _validateCSS(css) {
