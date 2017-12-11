@@ -1,11 +1,12 @@
-import Component from 'ember-component';
-import run from 'ember-runloop';
-import injectService from 'ember-service/inject';
+import Component from '@ember/component';
+import { run } from '@ember/runloop';
+import { inject } from '@ember/service';
 import { assert } from 'ember-metal/utils';
 import layout from '../templates/components/amp-sidebar';
 
 export default Component.extend({
-  amp: injectService(),
+  amp: inject(),
+  document: inject('-document'),
   layout,
 
   init() {
@@ -15,8 +16,8 @@ export default Component.extend({
     assert('amp-sidebar component cannot render if "amp" service is not present', !!amp);
     amp.registerExtension('sidebar');
 
-    this._dom = this.renderer._dom;
-    this._markerNode = this._dom.document.createTextNode('');
+    this._dom = this.get('document');
+    this._markerNode = this._dom.createTextNode('');
     this._didInsert = false;
   },
 
@@ -49,7 +50,7 @@ export default Component.extend({
     if (element.parentNode) {
       element.parentNode.removeChild(element);
     }
-    let body = this._dom.document.body;
+    let body = this._dom.body;
     body.insertBefore(element, body.firstChild);
   }
 });
