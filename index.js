@@ -15,7 +15,10 @@ var MINIMUM_EMBER_HEAD_VERSION = '0.1.0';
 
 module.exports = {
   name: 'ember-cli-amp',
-  after: 'ember-cli-fastboot',
+  after: [
+    'ember-cli-sass',
+    'ember-cli-fastboot'
+  ],
 
   init() {
     this._super.apply(this, arguments);
@@ -76,7 +79,11 @@ module.exports = {
   },
 
   _readFile(absolutePath) {
-    return fs.readFileSync(absolutePath, 'utf8');
+    try {
+      return fs.readFileSync(absolutePath, 'utf8');
+    } catch(e) {
+      return '';
+    }
   },
 
   _readBuiltFile(relativePath) {
