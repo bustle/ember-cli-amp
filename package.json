@@ -9,7 +9,9 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "mocha && ember test"
+    "test": "mocha && ember test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": "https://github.com/bustlelabs/ember-cli-amp",
   "engines": {
@@ -53,13 +55,15 @@
   ],
   "dependencies": {
     "amphtml-validator": "^1.0.10",
-    "ember-cli-babel": "^5.1.6",
+    "ember-cli-babel": "^6.0.0",
     "ember-cli-fastboot": "~1.0.0-beta.9",
-    "ember-cli-head": "^0.1.0",
+    "ember-cli-head": "^0.2.0",
     "ember-cli-htmlbars": "^1.1.0",
-    "ember-cli-version-checker": "^1.1.6"
+    "ember-cli-version-checker": "^1.1.6",
+    "snyk": "^1.88.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "snyk": true
 }
